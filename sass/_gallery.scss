@@ -1,0 +1,778 @@
+//Gallery Start
+
+// @for $x from 1 through 6 {
+//     .show a:nth-child(#{$x}) {
+//      animation-delay: $x * 1s;
+//    }
+// }
+
+.gallery {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content;
+    background-color: $color1;
+    padding: 6rem 3rem;
+    
+    
+    @include easeOut; 
+    
+    & .gallimg {
+        width: 100%; 
+        height: 100%;
+        overflow: auto;
+        padding: 4rem;
+        @include easeOut;
+
+        @include mediaXl {            
+            padding: 0;
+        }
+
+        @include mediaLg {            
+            padding: 0;
+        }
+
+        @include mediaML {            
+            padding: 0;
+        }
+
+        @include mediaMd {            
+            padding: 0;
+        }
+
+        @include mediaSm {            
+            padding: 0;
+        }
+
+        @include mediaXs {            
+            padding: 0;
+        }
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    
+
+    & .portHeaders {
+        grid-column: 1;
+        color: $color2;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    & .group1 {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: min-content min-content;  
+        gap: 2rem;     
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content min-content min-content;
+        }
+        
+        
+        
+
+        &.show {
+            width: 100%; 
+            height: 100%;
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+
+                & a {
+                    animation: fadeInOpacity 1s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                    
+                    &:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+                }
+                
+                
+            }
+            
+            
+    
+    }
+
+    & .group2 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);        
+        opacity: 0;
+
+        @include mediaXl {            
+            grid-template-rows: repeat(3, min-content);
+        }
+
+        @include mediaLg {            
+            grid-template-rows: repeat(3, min-content);
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: repeat(3, min-content);
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: repeat(3, min-content);
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: repeat(3, min-content);
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 1s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                    
+                    &:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+
+                    &:nth-child(5) {
+                        animation-delay: 2.5s;
+                    }
+
+                    &:nth-child(6) {
+                        animation-delay: 3s;
+                    }
+                }
+            }
+            
+    }
+
+    & .group3 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);        
+        opacity: 0;
+
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 1s 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 1s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                    
+                    &:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+                }
+            }
+    }
+
+    & .group4 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);       
+        opacity: 0;
+
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content min-content min-content min-content;
+        }
+
+        
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 1s 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 2s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                    
+                    &:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+                }
+            }
+    }
+
+    & .group5 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);        
+        opacity: 0;
+
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 1s 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 2s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                    
+                    &:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+
+                    &:nth-child(5) {
+                        animation-delay: 2.5s;
+                    }
+                }
+            }
+    }
+
+    & .group6 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50% 50%;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);        
+        opacity: 0;
+
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 1s 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 2s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                }
+            }
+    }
+
+    & .group7 {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50%;
+        gap: 2rem;
+        transform: translate3d(-100%, 0, 0);        
+        opacity: 0;
+        
+        @include mediaXl {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaLg {            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaMd {  
+            grid-template-columns: 1fr 1fr;           
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaSm { 
+            grid-template-columns: 1fr 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+        @include mediaXs { 
+            grid-template-columns: 1fr;            
+            grid-template-rows: min-content min-content;
+        }
+
+            &.show{
+                width: 100%; 
+                height: 100%;
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                animation: fadeInOpacity 2s ease-in 0.5s 1 normal backwards; 
+
+                & a {
+                    animation: fadeInOpacity 2s ease-in 1 normal backwards;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.5s;
+                    }
+                    
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    
+                    &:nth-child(3) {
+                        animation-delay: 1.5s;
+                    }
+                }
+            }
+    }
+
+    
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 1000ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 300;
+    
+    
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    
+    
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: $color2;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 3rem;
+    z-index: 10;
+    text-align: center;
+    padding-bottom: 2rem;
+
+    @include mediaML {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+
+    @include mediaMd {
+        font-size: 1.8rem;
+        padding-top: 1rem;
+    }
+
+    @include mediaSm {
+        font-size: 1.8rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+}
+
+.popup {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transition: all 2s ease-in-out;
+    z-index: 10;
+    
+    @include mediaMd {
+        padding: 0px;
+        
+    }
+    
+    @include mediaSm {
+        padding: 0px;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    @include mediaXs {
+        padding: 0px;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+  }
+
+.popup__img {
+    object-fit: contain;
+}
+
+.popup .content .popup__img {    
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: auto;
+    
+}  
+
+.content {    
+    object-fit: contain;
+    height: 80vh;
+    width: 95vw;
+
+    @include mediaMd {
+        width: 100vw;
+    }
+
+    @include mediaSm {
+        width: 100vw;
+    }
+    
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    height: auto;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 3rem;
+        top: 5px;
+        right: 10px;
+    }
+
+    @include mediaSm {
+        font-size: 3rem;
+        top: 5px;
+        right: 10px;
+    }
+
+    @include mediaXs {
+        font-size: 3rem;
+        top: 5px;
+        right: 10px;
+    }
+  }
+
+  .popup .last {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    height: auto;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 3rem;
+        
+    }
+
+    @include mediaSm {
+        font-size: 3rem;
+        
+    }
+
+    @include mediaXs {
+        font-size: 3rem;
+        
+    }
+  }
+
+  .popup .next {
+    position: absolute;
+    top: 10px;
+    left: 130px;
+    height: auto;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 3rem;
+        
+    }
+
+    @include mediaSm {
+        font-size: 3rem;
+        
+    }
+
+    @include mediaXs {
+        font-size: 3rem;
+        
+    }
+  }
+
+  .close:hover, .last:hover, .next:hover {
+      color: $color2;
+      
+  }
+
+  .socialLead {
+      color: $color2;
+      grid-row: 9;
+      grid-column: 1 / span 3;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 0;
+      font-size: 2rem;
+
+      @include mediaSm {
+          font-size: 1.4rem;
+      }
+
+      & h2 {
+          padding-bottom: 3rem;
+      }
+
+      & img {
+          width: auto;
+          height: 50px;
+          
+      }
+  }
+
+//Gallery End

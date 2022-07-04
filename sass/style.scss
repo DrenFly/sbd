@@ -1,0 +1,1036 @@
+@import "config";
+@import "menu";
+@import "gallery";
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    max-width: 1920px;
+    margin: auto;
+    font-size: 10px;
+    
+    
+    &::-webkit-scrollbar {
+        background: $color1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $color2;
+        border-radius: 100vw;
+        @include easeOut;
+
+        &:hover {
+            background-color: lighten($color2, 10);
+        }
+    }
+}
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;    
+    background-color: $color1;
+    width: 100%;
+    
+}
+
+.main-nav {
+    position: sticky;
+    background-color: rgba($color1, 0.7);
+    height: clamp(5rem, 5vh, 8rem);
+    width: 100%;
+    top: 0%;
+    z-index: 200;
+    
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        justify-content:space-around;
+        align-items: center;
+        font-size: 2rem;
+       
+
+        & a {
+            text-decoration: none;
+            color: $color2;
+        }
+    }
+
+    & .siteicon {
+        max-width: 5rem;
+        visibility: visible;
+    }
+
+   
+
+    @include mediaML {
+        visibility: hidden;
+    }
+
+    @include mediaMd {
+        visibility: hidden;
+    }
+
+    @include mediaSm {
+        visibility: hidden;
+    }
+
+    @include mediaXs {
+        visibility: hidden;
+    }
+}
+
+.main-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    
+    & .textHead {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        color: $color3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    & .heading {
+        grid-column: 1 / span 3;
+        grid-row: 1;        
+        position: relative;
+        color: $color3;
+        background-color: $color2;
+        height: 100%;
+        width: 100%;
+        animation: slidein 2s ease-in 0.5s 1 normal backwards;
+        clip-path: polygon(0 0, 72.8% 0, 65.2% 100%, 0% 100%);
+
+        @include mediaXs {
+            grid-column: 1 / span 4;
+        }
+        
+    }
+
+    & .headIntro {
+        padding-left: 20%;
+        opacity: 0;
+        animation: fadeInOpacity 2s ease-in 4s 1 normal forwards;
+        font-size: 2rem;
+
+        @include mediaXs {
+            padding-left: 10%;
+        }
+
+        @include mediaSm {
+            padding-left: 10%;
+        }
+
+        @include mediaMd {
+            padding-left: 15%;
+        }   
+
+        @include mediaML {
+            padding-left: 15%;
+        }
+        
+    }
+
+    & .brandState {
+        padding-left: 20%;
+        opacity: 0;
+        font-size: clamp(3rem, 6vw, 4rem);
+        animation: fadeInOpacity 2s ease-in 1s 1 normal forwards;
+        
+        @include mediaXs {
+            padding-left: 10%;
+        }
+
+        @include mediaSm {
+            padding-left: 10%;
+        }
+
+        @include mediaMd {
+            padding-left: 15%;
+        }   
+
+        @include mediaML {
+            padding-left: 15%;
+        }
+        
+    }
+
+    & .headOutro {
+        padding-left: 36%;
+        opacity: 0;
+        animation: fadeInOpacity 2s ease-in 5s 1 normal forwards;
+        font-size: 2rem;
+
+        @include mediaXs {
+            padding-left: 10%;
+        }
+
+        @include mediaSm {
+            padding-left: 10%;
+        }
+
+        @include mediaMd {
+            padding-left: 15%;
+        }   
+
+        @include mediaML {
+            padding-left: 15%;
+        }
+        
+    }
+    
+
+    & .profImg {
+        grid-column: 3;
+        grid-row: 1;
+        float: right;
+        height: 100%;
+                 
+        opacity: 0;
+        clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
+        animation: fadeInOpacity 2s ease-in 3s 1 normal forwards;
+        z-index: 99;
+
+        @include mediaML {
+            width: 550px; 
+        }
+
+        @include mediaMd {
+            width: 500px; 
+        }
+
+        @include mediaSm {
+            width: 400px; 
+        }
+
+        @include mediaXs {
+            width: 65vw; 
+        }
+    }
+    
+}
+
+.container1 {
+    color: $color3;
+
+    & .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content 1fr;
+        place-items: center;
+
+        @include mediaML {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 1fr 1fr;
+        }
+
+        @include mediaMd {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 1fr 1fr;
+        }
+
+        @include mediaSm {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 1fr min-content;
+        }
+
+        @include mediaXs {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 1fr min-content;
+        }
+
+        & .aboutme {
+            grid-row: 1;
+            grid-column: 1 / span 2;
+            text-align: center;
+            padding: 8rem 0;
+            font-size: 3rem;
+
+            @include mediaML {
+                grid-row: 1;
+                grid-column: 1;
+                padding: 4rem 0;
+            }
+
+            @include mediaMd {
+                grid-row: 1;
+                grid-column: 1;
+                padding: 4rem 0;
+            }
+
+            @include mediaSm {
+                grid-row: 1;
+                grid-column: 1;
+                padding: 4rem 0;
+            }
+
+            @include mediaXs {
+                grid-row: 1;
+                grid-column: 1;
+                padding: 2rem 0;
+                
+            }
+        }
+
+        & p {
+            font-size: 2rem;
+            padding: 4rem 8rem;
+            line-height: 3rem;
+            text-align: justify;
+            
+            @include mediaML {
+                padding: 4rem 4rem;
+            }
+
+            @include mediaMd {
+                padding: 4rem 4rem;
+            }
+
+            @include mediaSm {
+                padding: 4rem 4rem;
+                line-height: 2.5rem;
+                font-size: 2rem;
+            }
+
+            @include mediaXs {
+                padding: 2rem 4rem;
+                line-height: 2rem;
+                font-size: 1.6rem;
+            }
+        }
+
+        & img {
+            width: clamp(30rem, 45vw, 60rem);
+            padding: 2rem;
+
+            @include mediaML {
+                grid-row: 3;
+                grid-column: 1;
+            }
+
+            @include mediaMd {
+                grid-row: 3;
+                grid-column: 1;
+            }
+
+            @include mediaSm {
+                grid-row: 3;
+                grid-column: 1;
+            }
+
+            @include mediaXs {
+                grid-row: 3;
+                grid-column: 1;
+            }
+        }
+    }
+
+    & .aboutPro {
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content repeat(3, 1fr);
+        padding: 0 2rem;
+
+        & .icons {
+            width: 100%;
+            display: flex;
+            justify-content:space-evenly;
+            color: $color2;
+
+            & a {
+                text-decoration: none;
+                color: inherit;
+                @include easeOut;
+
+                &:hover {
+                    transform: scale(1.1);
+                    color: lighten($color2, 15)
+                }
+            }
+        }
+
+        & .webD {
+
+            & h2 {
+
+                @include mediaML {
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+
+                @include mediaMd {
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+
+                @include mediaSm {
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+
+                @include mediaXs {
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+            }
+            
+            & p {
+
+                @include mediaML {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                @include mediaMd {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                @include mediaSm {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                @include mediaXs {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+            }
+
+            & img {
+
+                @include mediaML {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaMd {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaSm {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaXs {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+            }
+
+        }
+
+        
+
+        & .box {
+            display: flex;
+            place-items: center;
+            justify-content: space-around;
+            padding: 4rem 0;
+            margin: 4rem 0;
+
+            @include mediaML {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(3, min-content);
+                gap: 2rem;
+            }
+
+            @include mediaMd {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(3, min-content);
+                gap: 2rem;
+            }
+
+            @include mediaSm {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(3, min-content);
+                gap: 2rem;
+                padding: 2rem 0;
+                margin: 2rem 0;
+            }
+
+            @include mediaXs {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(3, min-content);
+                gap: 2rem;
+                padding: 2rem 0;
+                margin: 2rem 0;
+            }
+
+            & h2 {
+                padding: 4rem;
+                background-color: $color2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                @include mediaML {
+                    padding: 2rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                @include mediaMd {
+                    padding: 2rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                @include mediaSm {
+                    padding: 2rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                @include mediaXs {
+                    padding: 2rem;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            & p {
+                width: 50%;
+                padding: 2rem;
+
+                @include mediaML {
+                    width: 100%;
+                    padding: 2rem;
+                }
+
+                @include mediaMd {
+                    width: 100%;
+                    padding: 2rem;
+                }
+
+                @include mediaSm {
+                    width: 100%;
+                    padding: 2rem;
+                }
+
+                @include mediaXs {
+                    width: 100%;
+                    padding: 2rem;
+                }
+            }
+
+            & img {
+                width: clamp(20rem, 35vw, 50rem);
+
+                @include mediaML {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaMd {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaSm {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+                @include mediaXs {
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+
+            }
+        }
+    }
+
+    & .tagline {
+        text-align: center;
+        padding: 6rem 0;
+        font-size: 2.5rem;
+
+        @include mediaML {
+            padding: 3rem 0;
+            font-size: 2rem;
+        }
+
+        @include mediaMd {
+            padding: 3rem 0;
+            font-size: 2rem;
+        }
+
+        @include mediaSm {
+            padding: 3rem 0;
+            font-size: 2rem;
+        }
+
+        @include mediaXs {
+            padding: 3rem 0;
+            font-size: 1.6rem;
+        }
+        
+
+        & a {
+            text-decoration: none;
+            color: $color2;
+
+            & button {
+                color: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                font-weight: inherit;
+                background-color: inherit;
+                border-radius: 0%;
+                border: none;
+                text-transform: inherit;
+                cursor: pointer;
+                @include easeOut;
+                padding: 3rem;
+
+                @include mediaML {
+                    padding: 1rem;
+                }
+
+                @include mediaMd {
+                    padding: 1rem;
+                }
+
+                @include mediaSm {
+                    padding: 1rem;
+                }
+        
+                @include mediaXs {
+                    padding: 1rem;
+                }
+
+                &:hover {
+                    color: lighten($color2, 15);
+                    
+                }
+            }
+        }
+    }
+}
+
+.container2 {
+    
+    padding: 1rem 3rem;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        align-self: center;
+        @include easeOut;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    & .webPort {
+        //padding-top: 18rem;
+        padding-bottom: 6rem;
+        font-size: 3rem;
+        text-align: center;
+        color: $color2;
+    }
+
+
+    & .group8 {
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 400px) auto;
+        gap: 4rem;
+
+        @include mediaML {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, min-content) auto;
+        }
+
+        @include mediaMd {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, min-content) auto;
+        }
+
+        @include mediaSm {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, min-content) auto;
+        }
+
+        @include mediaXs {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, min-content) auto;
+        }
+
+    & .webImg1 {
+        grid-row: 1 / span 3;
+        grid-column: 1;
+
+        @include mediaML {
+            grid-row: 1 / span 3;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 1 / span 3;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 1 / span 3;
+            grid-column: 1;
+        }
+
+        @include mediaXs {
+            grid-row: 1 / span 3;
+            grid-column: 1;
+        }
+    }
+
+    & .webImg2 {
+        grid-row: 1;
+        grid-column: 2;
+
+        @include mediaML {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        @include mediaMd {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        @include mediaSm {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        @include mediaXs {
+            grid-row: 1;
+            grid-column: 2;
+        }
+    }
+
+    & .webImg3 {
+        grid-row: 1 / span 2;
+        grid-column: 3;
+
+        @include mediaML {
+            grid-row: 2 / span 2;
+            grid-column: 2;
+        }
+
+        @include mediaMd {
+            grid-row: 2 / span 2;
+            grid-column: 2;
+        }
+
+        @include mediaSm {
+            grid-row: 2 / span 2;
+            grid-column: 2;
+        }
+
+        @include mediaXs {
+            grid-row: 2 / span 2;
+            grid-column: 2;
+        }
+    }
+
+    & .webImg4 {
+        grid-row: 2;
+        grid-column: 2;
+
+        @include mediaML {
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        @include mediaXs {
+            grid-row: 5;
+            grid-column: 1;
+        }
+    }
+
+    & .webImg5 {
+        grid-row: 3;
+        grid-column: 2;
+
+        @include mediaML {
+            grid-row: 5;
+            grid-column: 2;
+        }
+
+        @include mediaMd {
+            grid-row: 5;
+            grid-column: 2;
+        }
+
+        @include mediaSm {
+            grid-row: 5;
+            grid-column: 2;
+        }
+
+        @include mediaXs {
+            grid-row: 5;
+            grid-column: 2;
+        }
+    }
+
+    & .webImg6 {
+        grid-row: 3;
+        grid-column: 3;
+
+        @include mediaML {
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        @include mediaXs {
+            grid-row: 6;
+            grid-column: 1;
+        }
+    }
+
+    & .webImg7 {
+        justify-self: center;
+        grid-row: 4;
+        grid-column: 2 / span 2;
+
+        @include mediaML {
+            grid-row: 6;
+            grid-column: 2;
+        }
+
+        @include mediaMd {
+            grid-row: 6;
+            grid-column: 2;
+        }
+
+        @include mediaSm {
+            grid-row: 6;
+            grid-column: 2;
+        }
+
+        @include mediaXs {
+            grid-row: 6;
+            grid-column: 2;
+        }
+    }
+
+    & .webImg8 {
+        align-self: center;
+        width: 100%;
+        height: auto;
+        grid-row: 4;
+        grid-column: 1;
+
+        @include mediaML {
+            grid-row: 7;
+            grid-column: 1 / span 2;
+        }
+
+        @include mediaMd {
+            grid-row: 7;
+            grid-column: 1 / span 2;
+        }
+
+        @include mediaSm {
+            grid-row: 7;
+            grid-column: 1 / span 2;
+        }
+
+        @include mediaXs {
+            grid-row: 7;
+            grid-column: 1 / span 2;
+        }
+    }
+  }
+}
+
+.info {
+    height: 20vh;
+}
+
+
+ .footer {
+     background-image: url("../img/gallery/web/Mockup-yellow-background-1024x794.jpg");
+     background-position: center;
+     background-color: rgba($color2, 0.5);
+     height: clamp(15rem, 100%, 30rem);
+     width: 100%;
+     
+
+     & .footCon {
+        padding-bottom: 2rem;
+        width: 100%;
+        height: 100%;
+        color: $color3;
+        font-size: 2rem;
+        background-color: rgba($color1, 0.5);
+        background-size: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: min-content min-content; 
+        place-items: center; 
+
+        & .footTop {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+            padding: 2rem 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            @include mediaMd {
+                place-items: center;
+                flex-direction: column;
+            }
+
+            @include mediaSm {
+                place-items: center;
+                flex-direction: column;
+            }
+
+            @include mediaXs {
+                place-items: center;
+                flex-direction: column;
+            }
+
+            & h2 {
+                width: 75%;
+                padding: 2rem 0;
+                text-align: center;
+
+                @include mediaMd {
+                    width: 100%;
+                    padding: 2rem 0;
+                }
+
+                @include mediaSm {
+                    width: 100%;
+                    padding: 2rem 0;
+                }
+            }
+
+            & img {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            & .ifirst {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            & .isecond {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+         
+        
+
+        & form {            
+            grid-column: 1 / span 3;
+            grid-row: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+
+            & label {
+                padding: 1rem;
+            }
+            & .email {
+                padding: 1rem;
+                width: 30%;
+                line-height: 2rem;
+                border-radius: 0;
+                border: 5px solid transparent;
+
+                @include mediaMd {
+                    width: 75%;
+                }
+
+                @include mediaSm {
+                    width: 75%;
+                }
+
+                @include mediaXs {
+                    width: 75%;
+                }
+
+                &:focus {
+                    border: 5px solid $color2;
+                }
+            }
+
+            & .message {
+                border: 5px solid transparent;
+                border-radius: 0;
+                width: 30%;
+
+                @include mediaMd {
+                    width: 75%;
+                }
+
+                @include mediaSm {
+                    width: 75%;
+                }
+
+                @include mediaXs {
+                    width: 75%;
+                }
+
+
+                &:focus {
+                    border: 5px solid $color2;
+                }
+            }
+        }
+    }
+ } 
